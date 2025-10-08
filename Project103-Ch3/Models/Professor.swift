@@ -13,6 +13,7 @@ class Professor: Identifiable {
     var firstName: String
     var lastName: String
     var phoneNumber: String
+    
     // Method, cusom initializer
     init(firstName: String, lastName: String, phoneNumber: String){
         self.id = UUID()

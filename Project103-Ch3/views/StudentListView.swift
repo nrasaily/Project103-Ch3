@@ -11,11 +11,11 @@ struct StudentListView: View {
     
     
     @State private var students: [Student] = [
-        Student(name: "Fernanda", age: 10, grade: 78.66),
-        Student(name: "John", age: 11, grade: 92.45),
-        Student(name: "Mary", age: 12, grade: 89.21),
-        Student(name: "David", age: 13, grade: 94.12),
-        Student(name: "Thomas", age: 14, grade: 76.54)
+        Student(name: "Fernanda", age: 10, grade: [80, 90]),
+        Student(name: "John", age: 11, grade: [100, 90]),
+        Student(name: "Mary", age: 12, grade: [60, 80]),
+        Student(name: "David", age: 13, grade: [40, 100]),
+        Student(name: "Thomas", age: 14, grade: [60,90])
     ]
     
     
@@ -27,7 +27,7 @@ struct StudentListView: View {
         Text("Student List View")
         
         List(students, id: \.name){ student in
-            Text(" Name: \(student.name): - Grade: \(student.grade, specifier: "%.2f")")
+            Text("Name: \(student.name): - Grade: \(student.grade, specifier: "%.2f")")
         }
         HStack {
             TextField("Name", text: $newStudentName)
