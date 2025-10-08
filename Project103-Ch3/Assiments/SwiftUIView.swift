@@ -24,13 +24,14 @@ struct SwiftUIView: View {
         var total = 0
         var count = 0
         
-        for(name, grades) in studentGrades{
+        for(Name, grades) in studentGrades{
             for grade in grades {
                 total += grade
                 count += 1
             }
         }
         return Double(total) / Double(count)
+        
     }
     
     var body: some View {
@@ -43,7 +44,7 @@ struct SwiftUIView: View {
             Text("AVG:  \(average)")
             
             List(students, id: \.self) { student in
-                Text("Name \(student)")
+                Text("Name: \(student)")
              
             }
             .listStyle(GroupedListStyle())
